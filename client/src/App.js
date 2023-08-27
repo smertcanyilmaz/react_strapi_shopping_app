@@ -1,13 +1,5 @@
-//import React from "react";
-import {
-  // BrowserRouter as Router,
-  // Switch,
-  // Route,
-  // Link,
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import Product from "./pages/Product/Product";
@@ -24,31 +16,18 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/products/:id",
-        element: <Products />,
-      },
-      {
-        path: "/product/:id",
-        element: <Product />,
-      },
-    ],
-  },
-]);
-
 function App() {
   return (
     <div>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="products/:id" element={<Products />} />
+            <Route path="product/:id" element={<Product />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
