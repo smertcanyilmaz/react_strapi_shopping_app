@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import Card from "../Card/Card";
 import useFetch from "../../hooks/useFetch";
 
@@ -6,9 +5,9 @@ const List = ({ catId, maxPrice, sort, subCats }) => {
   const { data, loading, error } = useFetch(
     `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
       (item) => `&[filters][sub_categories][id][$eq]=${item}`
-    )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
+    )}&[filters][price][$lte]=${maxPrice}${sort ? `&sort=price:${sort}` : ""}`
   );
-
+  //&sort=price:${sort}
   return (
     <div className="max-w-5xl grid grid-cols-4 gap-8">
       {loading

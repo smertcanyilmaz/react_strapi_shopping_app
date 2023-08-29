@@ -43,10 +43,10 @@ const NavbarFirst = () => {
       <div>
         <ul className="flex gap-5">
           <li>
-            <Link to="/products/1">Women</Link>
+            <Link to="/products/women/1">Women</Link>
           </li>
           <li>
-            <Link to="/products/2">Men</Link>
+            <Link to="/products/men/2">Men</Link>
           </li>
           <li>
             <Link to="/products/3">Children</Link>
