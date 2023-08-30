@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-//import payment_logo from "../../images/payment_logo.png";
+import payment_logo from "../../images/payment_logo.png";
 import Contact from "../Contact/Contact";
 
 const Footer = () => {
@@ -65,7 +65,7 @@ const Footer = () => {
             © Copyright 2023. All rights reserved
           </p>
         </div>
-        {/* <img src={payment_logo} alt="payment_logo" className="w-52 h-full" /> */}
+        <img src={payment_logo} alt="payment_logo" className="w-52 h-full" />
       </div>
     </div>
   );

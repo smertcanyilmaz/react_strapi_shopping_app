@@ -66,6 +66,10 @@
         "Featured",
         "Trending"
       ]
+    },
+    "isSale": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -39,6 +39,7 @@ const Product = () => {
         title: data.attributes.title,
         desc: data.attributes.desc,
         price: data.attributes.price,
+        sale: data.attributes.isSale,
         img: data.attributes.img.data.attributes.url,
         quantity,
       })
@@ -76,9 +77,24 @@ const Product = () => {
           </div>
           <div className="right flex-1 flex flex-col gap-7">
             <h1>{data?.attributes?.title}</h1>
-            <span className="text-lg text-blue-500 font-semibold">
+            {/* <span className="text-lg text-blue-500 font-semibold">
               {data?.attributes?.price}$
-            </span>
+            </span> */}
+            <div className="flex gap-3">
+              {data?.attributes?.isSale && (
+                <span className="line-through text-gray-500 ">
+                  ${data?.attributes?.isSale && data?.attributes?.price}
+                </span>
+              )}
+
+              {data?.attributes?.isSale ? (
+                <span className="text-red-500 font-semibold">
+                  ${data?.attributes?.price - data?.attributes?.price * 0.2}
+                </span>
+              ) : (
+                `$${data?.attributes?.price}`
+              )}
+            </div>
             <p className="  font-light text-justify">
               {data?.attributes?.desc}
             </p>

@@ -13,7 +13,9 @@ const Cart = () => {
   const totalPrice = () => {
     let total = 0;
     products.forEach((item) => {
-      total += item.quantity * item.price;
+      item.sale
+        ? (total += item.quantity * item.price * 0.8)
+        : (total += item.quantity * item.price);
     });
     return total.toFixed(2);
   };
@@ -54,8 +56,20 @@ const Cart = () => {
               <p className="text-gray-500 font-medium mb-2 text-sm">
                 {item.desc?.substring(0, 100)}
               </p>
-              <div className="price text-blue-500">
-                {item.quantity} x ${item.price}
+              <div className="price text-black">
+                {item.sale ? (
+                  <span>
+                    {item.quantity} x
+                    <span className="line-through text-gray-500 mx-1">
+                      {item.price}
+                    </span>
+                    <span className="text-red-500">${item.price * 0.8}</span>
+                  </span>
+                ) : (
+                  <span>
+                    {item.quantity} x ${item.price}
+                  </span>
+                )}
               </div>
             </div>
           </div>

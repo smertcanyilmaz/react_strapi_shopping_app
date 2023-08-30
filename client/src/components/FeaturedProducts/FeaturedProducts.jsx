@@ -12,7 +12,7 @@ const FeaturedProducts = ({ type }) => {
       <div>
         <h1 className="text-3xl font-bold">{type} Products</h1>
       </div>
-      <div className="max-w-5xl mx-auto flex gap-8">
+      <div className="flex justify-between">
         {error
           ? "Something went wrong!"
           : loading

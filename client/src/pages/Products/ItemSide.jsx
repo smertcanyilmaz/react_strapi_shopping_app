@@ -1,14 +1,14 @@
 import React from "react";
 import List from "../../components/List/List";
+import menPage from "../../images/menPage.jpg";
+import womenPage from "../../images/womenPage.jpg";
 
 const ItemSide = ({ catId, maxPrice, sort, selectedSubCats, page }) => {
   let imageUrl = "";
   if (page === "men") {
-    imageUrl =
-      "https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&w=600";
+    imageUrl = menPage;
   } else if (page === "women") {
-    imageUrl =
-      "https://images.pexels.com/photos/2704496/pexels-photo-2704496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+    imageUrl = womenPage;
   }
 
   return (

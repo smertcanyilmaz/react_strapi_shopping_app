@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ item }) => {
   const [showImg, setShowImg] = useState(false);
   const url = process.env.REACT_APP_UPLOAD_URL;
-
+  console.log(item);
   return (
     <Link to={`/product/${item.id}`} className=" flex flex-col gap-2">
       <div
@@ -15,6 +15,12 @@ const Card = ({ item }) => {
         {item?.attributes.isNew && (
           <div className="absolute left-1.5 top-1.5 bg-white text-xs text-teal-600 p-1 z-50">
             New Season
+          </div>
+        )}
+
+        {item?.attributes.isSale && (
+          <div className="absolute left-1.5 top-1.5 bg-white text-xs text-red-500 font-bold p-1 z-50">
+            SALE
           </div>
         )}
         <img
@@ -31,11 +37,20 @@ const Card = ({ item }) => {
         />
       </div>
       <p>{item.attributes.title}</p>
-      <div>
-        <span className="line-through text-gray-500 mr-2">
-          ${item.oldPrice || item?.attributes.price + 20}
-        </span>
-        {item?.attributes.price}$
+      <div className="flex gap-3">
+        {item?.attributes.isSale && (
+          <span className="line-through text-gray-500 ">
+            ${item?.attributes.isSale && item?.attributes.price}
+          </span>
+        )}
+
+        {item?.attributes.isSale ? (
+          <span className="text-red-500 font-semibold">
+            ${item?.attributes.price - item?.attributes.price * 0.2}
+          </span>
+        ) : (
+          `$${item?.attributes.price}`
+        )}
       </div>
     </Link>
   );
