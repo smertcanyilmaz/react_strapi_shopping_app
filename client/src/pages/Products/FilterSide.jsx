@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import FilterPrice from "../../components/FilterPrice/FilterPrice";
 const FilterSide = ({
   data,
   maxPrice,
@@ -9,8 +9,6 @@ const FilterSide = ({
   selectedSubCats,
   setSelectedSubCats,
 }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
   const handleChange = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
@@ -21,11 +19,6 @@ const FilterSide = ({
         : selectedSubCats.filter((item) => item !== value)
     );
   };
-  const handleRadioChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
-  const subcategories = ["Subcategory1", "Subcategory2", "Subcategory3"];
 
   return (
     <div className="left h-full space-y-3 sticky top-8">
@@ -51,57 +44,14 @@ const FilterSide = ({
             type="range"
             min={0}
             max={1000}
-            onChange={(e) => setMaxPrice(e.target.value)}
+            onChange={(e) =>
+              setMaxPrice({ min: e.target.value, max: e.target.value })
+            }
           />
           <span>{maxPrice}</span>
         </div> */}
-        {/* <div>
-          <input
-            type="radio"
-            name=""
-            id=""
-            value="option1"
-            checked={selectedOption === "option1"}
-            onChange={handleRadioChange}
-          />
-          <span className="ml-2">0$ - $100</span>
-        </div>
-        <div>
-          <input
-            type="radio"
-            name=""
-            id=""
-            value="option2"
-            checked={selectedOption === "option2"}
-            onChange={handleRadioChange}
-          />
-          <span className="ml-2">100$ - $500</span>
-        </div>
-        <div>
-          <input
-            type="radio"
-            name=""
-            id=""
-            value="option3"
-            checked={selectedOption === "option3"}
-            onChange={handleRadioChange}
-          />
-          <span className="ml-2">500$ - $1000</span>
-        </div> */}
       </div>
-      <div>
-        {subcategories.map((subcategory) => (
-          <label key={subcategory}>
-            <input
-              type="checkbox"
-              value={subcategory}
-              checked={selectedSubCats.includes(subcategory)}
-              onChange={handleChange}
-            />
-            {subcategory}
-          </label>
-        ))}
-      </div>
+      <FilterPrice data={data} setSort={setSort} setMaxPrice={setMaxPrice} />
       <div className="filterItem space-y-2">
         <h2 className="text-xl">Sort by</h2>
         <div className="inputItem">
