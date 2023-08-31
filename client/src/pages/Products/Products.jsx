@@ -8,6 +8,7 @@ import ItemSide from "./ItemSide";
 const Products = ({ page }) => {
   const catId = parseInt(useParams().id);
   const [maxPrice, setMaxPrice] = useState(1000);
+  const [minPrice, setMinPrice] = useState(0);
   const [sort, setSort] = useState(null);
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
@@ -22,6 +23,7 @@ const Products = ({ page }) => {
         catId={catId}
         maxPrice={maxPrice}
         setMaxPrice={setMaxPrice}
+        setMinPrice={setMinPrice}
         sort={sort}
         setSort={setSort}
         selectedSubCats={selectedSubCats}
@@ -30,6 +32,7 @@ const Products = ({ page }) => {
       <ItemSide
         catId={catId}
         maxPrice={maxPrice}
+        minPrice={minPrice}
         sort={sort}
         selectedSubCats={selectedSubCats}
         page={page}

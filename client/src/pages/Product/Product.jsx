@@ -122,10 +122,10 @@ const Product = () => {
               <AddShoppingCartIcon fontSize="small" /> ADD TO CART
             </button>
             <div className="links flex gap-5">
-              <div className="item flex item-center gap-2 text-blue-500 text-sm">
+              <button className="item flex item-center gap-2 text-blue-500 text-sm cursor-pointer">
                 <FavoriteBorderIcon fontSize="small" />
                 ADD TO WISH LIST
-              </div>
+              </button>
               <div className="item flex item-center gap-2 text-blue-500 text-sm">
                 <BalanceIcon fontSize="small" /> ADD TO COMPARE
               </div>

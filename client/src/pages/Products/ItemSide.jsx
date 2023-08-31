@@ -3,7 +3,14 @@ import List from "../../components/List/List";
 import menPage from "../../images/menPage.jpg";
 import womenPage from "../../images/womenPage.jpg";
 
-const ItemSide = ({ catId, maxPrice, sort, selectedSubCats, page }) => {
+const ItemSide = ({
+  catId,
+  maxPrice,
+  sort,
+  selectedSubCats,
+  page,
+  minPrice,
+}) => {
   let imageUrl = "";
   if (page === "men") {
     imageUrl = menPage;
@@ -21,6 +28,7 @@ const ItemSide = ({ catId, maxPrice, sort, selectedSubCats, page }) => {
         maxPrice={maxPrice}
         sort={sort}
         subCats={selectedSubCats}
+        minPrice={minPrice}
       />
     </div>
   );

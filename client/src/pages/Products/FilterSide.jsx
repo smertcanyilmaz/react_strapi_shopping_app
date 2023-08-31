@@ -4,6 +4,7 @@ const FilterSide = ({
   data,
   maxPrice,
   setMaxPrice,
+  setMinPrice,
   sort,
   setSort,
   selectedSubCats,
@@ -51,7 +52,12 @@ const FilterSide = ({
           <span>{maxPrice}</span>
         </div> */}
       </div>
-      <FilterPrice data={data} setSort={setSort} setMaxPrice={setMaxPrice} />
+      <FilterPrice
+        data={data}
+        setSort={setSort}
+        setMaxPrice={setMaxPrice}
+        setMinPrice={setMinPrice}
+      />
       <div className="filterItem space-y-2">
         <h2 className="text-xl">Sort by</h2>
         <div className="inputItem">

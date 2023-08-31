@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import Favorites from "../Favorites/Favorites";
 
 const NavbarLast = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,10 @@ const NavbarLast = () => {
           <PersonOutlinedIcon />
           <p>Account</p>
         </div>
-        <div className="text-center space-y-1 cursor-pointer">
+        <div
+          className="text-center space-y-1 cursor-pointer"
+          onClick={() => setOpen(!open)}
+        >
           <FavoriteBorderOutlinedIcon />
           <p>Favorites</p>
         </div>
