@@ -21,13 +21,13 @@ const FilterPrice = ({ data, setSort, setMaxPrice }) => {
 
     switch (targetId) {
       case 1:
-        setMaxPrice({ min: 0, max: 100 });
+        setMaxPrice(100);
         break;
       case 2:
-        setMaxPrice({ min: 101, max: 500 });
+        setMaxPrice(500);
         break;
       case 3:
-        setMaxPrice({ min: 501, max: 1000 });
+        setMaxPrice(1000);
         break;
       default:
         break;
