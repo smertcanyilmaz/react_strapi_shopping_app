@@ -14,7 +14,7 @@ const CartCard = ({ showPayment, type }) => {
         {type === "cart" ? "Product in your cart" : "Favorites"}
       </h1>
       {products.length === 0 ? (
-        <p className="text-blue-500 font-bold text-md text-center">
+        <p className="text-gray-500  font-bold text-md text-center">
           {type === "cart" ? "Cart" : "Favorites"} is empty
         </p>
       ) : (

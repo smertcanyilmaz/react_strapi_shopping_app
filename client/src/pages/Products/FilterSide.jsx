@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import FilterPrice from "../../components/FilterPrice/FilterPrice";
 const FilterSide = ({
   data,
-  maxPrice,
   setMaxPrice,
   setMinPrice,
-  sort,
   setSort,
   selectedSubCats,
   setSelectedSubCats,
@@ -39,18 +37,6 @@ const FilterSide = ({
       </div>
       <div className="filterItem space-y-2 text-sm">
         <h2 className="text-xl">Filter by price</h2>
-        {/* <div className="inputItem">
-          <span>0</span>
-          <input
-            type="range"
-            min={0}
-            max={1000}
-            onChange={(e) =>
-              setMaxPrice({ min: e.target.value, max: e.target.value })
-            }
-          />
-          <span>{maxPrice}</span>
-        </div> */}
       </div>
       <FilterPrice
         data={data}
