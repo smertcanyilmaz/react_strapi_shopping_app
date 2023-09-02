@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
+import { addToFavorites } from "../../redux/favoritesReducer";
 
 const Product = () => {
   const id = useParams().id;
@@ -35,6 +36,20 @@ const Product = () => {
   const addItemClickHandler = () => {
     dispatch(
       addToCart({
+        id: data.id,
+        title: data.attributes.title,
+        desc: data.attributes.desc,
+        price: data.attributes.price,
+        sale: data.attributes.isSale,
+        img: data.attributes.img.data.attributes.url,
+        quantity,
+      })
+    );
+  };
+
+  const addFavItemClickHandler = () => {
+    dispatch(
+      addToFavorites({
         id: data.id,
         title: data.attributes.title,
         desc: data.attributes.desc,
@@ -77,9 +92,6 @@ const Product = () => {
           </div>
           <div className="right flex-1 flex flex-col gap-7">
             <h1>{data?.attributes?.title}</h1>
-            {/* <span className="text-lg text-blue-500 font-semibold">
-              {data?.attributes?.price}$
-            </span> */}
             <div className="flex gap-3">
               {data?.attributes?.isSale && (
                 <span className="line-through text-gray-500 ">
@@ -122,7 +134,10 @@ const Product = () => {
               <AddShoppingCartIcon fontSize="small" /> ADD TO CART
             </button>
             <div className="links flex gap-5">
-              <button className="item flex item-center gap-2 text-blue-500 text-sm cursor-pointer">
+              <button
+                className="item flex item-center gap-2 text-blue-500 text-sm cursor-pointer"
+                onClick={addFavItemClickHandler}
+              >
                 <FavoriteBorderIcon fontSize="small" />
                 ADD TO WISH LIST
               </button>
