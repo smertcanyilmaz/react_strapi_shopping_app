@@ -17,7 +17,7 @@ const FilterPrice = ({ setMaxPrice, setMinPrice }) => {
   ];
 
   const handler = (event) => {
-    const targetId = parseInt(event.target.id); // id'yi bir tamsayıya dönüştür
+    const targetId = parseInt(event.target.id);
 
     switch (targetId) {
       case 1:

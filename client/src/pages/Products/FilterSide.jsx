@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import FilterPrice from "../../components/FilterPrice/FilterPrice";
+
 const FilterSide = ({
   data,
   setMaxPrice,

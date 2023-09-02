@@ -14,11 +14,6 @@ const NavbarFirst = () => {
           <li>
             <Link to="/products/men/2">Men</Link>
           </li>
-          <li>
-            <Link to="/products/men/2">
-              <p className="text-red-600 font-bold tracking-wider">SALE</p>
-            </Link>
-          </li>
         </ul>
       </div>
     </div>
