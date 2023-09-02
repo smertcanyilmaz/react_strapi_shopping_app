@@ -9,7 +9,8 @@ import Favorites from "../Favorites/Favorites";
 const NavbarLast = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openFav, setOpenFav] = useState(false);
-  const products = useSelector((state) => state.cart.products);
+  const cartProducts = useSelector((state) => state.cart.products);
+  const favorites = useSelector((state) => state.favorites.favorites);
 
   const handleOpenCart = () => {
     setOpenCart(!openCart);
@@ -24,22 +25,27 @@ const NavbarLast = () => {
   return (
     <div className="flex">
       <div className="flex gap-12 items-center ">
-        <div className="text-center space-y-1 cursor-pointer">
+        <div className="text-center space-y-1 cursor-pointer relative">
+          <span className="absolute -top-1 -right-3 bg-indigo-700 text-white text-[12px] font-semibold px-[3px] rounded-md">
+            soon
+          </span>
           <PersonOutlinedIcon />
           <p>Account</p>
         </div>
-        <div
-          className="text-center space-y-1 cursor-pointer"
-          onClick={handleOpenFav}
-        >
-          <FavoriteBorderOutlinedIcon />
+        <div className="text-center space-y-1 cursor-pointer">
+          <div className="relative cursor-pointer" onClick={handleOpenFav}>
+            <span className=" flex justify-center items-center absolute -top-1.5 -right-[-2px] bg-red-500 text-xs text-white rounded-full px-1.5 py-0.5">
+              {favorites.length}
+            </span>
+            <FavoriteBorderOutlinedIcon />
+          </div>
           <p>Favorites</p>
         </div>
 
         <div className="text-center space-y-1 cursor-pointer">
           <div className="relative cursor-pointer" onClick={handleOpenCart}>
             <span className=" flex justify-center items-center absolute -top-2 -right-3 bg-blue-600 text-xs text-white rounded-full px-1.5 py-0.5">
-              {products.length}
+              {cartProducts.length}
             </span>
             <ShoppingCartOutlinedIcon />
           </div>

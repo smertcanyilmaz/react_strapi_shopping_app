@@ -6,17 +6,7 @@ import CartCardMain from "./CartCardMain";
 const CartCard = ({ showPayment, type }) => {
   const cartProducts = useSelector((state) => state.cart.products);
   const favorites = useSelector((state) => state.favorites.favorites);
-  const [isEmpty, setIsEmpty] = useState(true);
-
   const products = type === "cart" ? cartProducts : favorites;
-
-  //const empty = products === [] ? setIsEmpty(false) : setIsEmpty(true);
-
-  // const empty = () => {
-  //   return products === [] ? setIsEmpty(false) : setIsEmpty(true);
-  // };
-
-  // empty();
 
   return (
     <div className="cart absolute top-20 right-5 z-50 bg-white p-5 shadow-lg">
