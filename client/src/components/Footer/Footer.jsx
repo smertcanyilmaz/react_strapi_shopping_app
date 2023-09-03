@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
       <div className="box2 flex justify-between items-center">
         <div className="flex gap-4 items-center">
-          <h1 className=" text-2xl font-bold text-blue-500">Lamastore</h1>
+          <h1 className=" text-lg font-bold text-blue-400">THE STORE</h1>
           <p className="text-[10px] text-gray-500">
             © Copyright 2023. All rights reserved
           </p>

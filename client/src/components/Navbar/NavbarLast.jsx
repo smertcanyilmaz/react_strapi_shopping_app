@@ -23,8 +23,8 @@ const NavbarLast = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="flex gap-12 items-center ">
+    <div className="hidden md:flex">
+      <div className="flex gap-6 md:gap-12 items-center ">
         <div className="text-center space-y-1 cursor-pointer relative">
           <span className="absolute -top-1 -right-3 bg-indigo-700 text-white text-[12px] font-semibold px-[3px] rounded-md">
             soon

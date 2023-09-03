@@ -13,13 +13,13 @@ const Card = ({ item }) => {
         onMouseLeave={() => setShowImg(false)}
       >
         {item?.attributes.isNew && (
-          <div className="absolute left-1.5 top-1.5 bg-white text-xs text-teal-600 p-1 z-50">
+          <div className="absolute left-1.5 top-1.5 bg-white text-xs text-teal-600 p-1 z-10">
             New Season
           </div>
         )}
 
         {item?.attributes.isSale && (
-          <div className="absolute left-1.5 top-1.5 bg-white text-xs text-red-500 font-bold p-1 z-50">
+          <div className="absolute left-1.5 top-1.5 bg-white text-xs text-red-500 font-bold p-1 z-10">
             SALE
           </div>
         )}

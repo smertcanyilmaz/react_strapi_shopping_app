@@ -4,17 +4,23 @@ import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
-import Sale from "./pages/Sale/Sale";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import { useSelector } from "react-redux";
 
 const Layout = () => {
+  const isMenuOpen = useSelector((state) => state.menu.open);
   return (
-    <div className="app">
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </div>
+    <>
+      {isMenuOpen && (
+        <div class="overlay h-full w-full bg-black z-30 fixed "></div>
+      )}
+      <div className="app">
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </div>
+    </>
   );
 };
 

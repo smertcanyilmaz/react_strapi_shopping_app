@@ -18,6 +18,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import cartReducer from "./cartReducer";
 import favoritesReducer from "./favoritesReducer";
+import menuReducer from "./menuReducer";
 
 const persistConfig = {
   key: "root",
@@ -31,11 +32,13 @@ const persistedFavoritesReducer = persistReducer(
   persistConfig,
   favoritesReducer
 );
+const persistedMenuReducer = persistReducer(persistConfig, menuReducer);
 
 export const store = configureStore({
   reducer: {
     cart: persistedReducer,
     favorites: persistedFavoritesReducer,
+    menu: persistedMenuReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
