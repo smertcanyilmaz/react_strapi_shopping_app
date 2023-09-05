@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
@@ -6,15 +6,25 @@ import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import "./App.css";
 import { useSelector } from "react-redux";
+import Overlay from "./components/MenuResponsive/Overlay";
 
 const Layout = () => {
   const isMenuOpen = useSelector((state) => state.menu.open);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("scroll-locked");
+    } else {
+      document.body.classList.remove("scroll-locked");
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
-      {isMenuOpen && (
-        <div class="overlay h-full w-full bg-black z-30 fixed "></div>
-      )}
+      {/* {isMenuOpen && <Overlay />} */}
+      <Overlay />
       <div className="app">
         <Navbar />
         <Outlet />

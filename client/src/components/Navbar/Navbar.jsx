@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import NavbarFirst from "./NavbarFirst";
 import NavbarLast from "./NavbarLast";
-import Menu from "./Menu";
-import { useState } from "react";
+import Menu from "../MenuResponsive/Menu";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
   return (
     <div className="max-w-full flex justify-between items-center mx-5 md:mx-14 py-5 text-sm">
       <NavbarFirst />
