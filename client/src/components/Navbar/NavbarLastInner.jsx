@@ -1,13 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import { Link } from "react-router-dom";
-import CartResponsive from "../../pages/Responsive/CartResponsive";
+import { open } from "../../redux/menuReducer";
 
 const NavbarLastInner = ({ handleOpenCart, handleOpenFav, type }) => {
   const cartProducts = useSelector((state) => state.cart.products);
   const favorites = useSelector((state) => state.favorites.favorites);
+
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -47,7 +49,13 @@ const NavbarLastInner = ({ handleOpenCart, handleOpenFav, type }) => {
           </span>
           <FavoriteBorderOutlinedIcon />
         </div>
-        <p>Favorites</p>
+        {type === "inner" ? (
+          <Link to="/favorites" onClick={() => dispatch(open())}>
+            Favorites
+          </Link>
+        ) : (
+          <p>Favorites</p>
+        )}
       </div>
 
       <div
@@ -66,7 +74,13 @@ const NavbarLastInner = ({ handleOpenCart, handleOpenFav, type }) => {
           </span>
           <ShoppingCartOutlinedIcon />
         </div>
-        {type === "inner" ? <Link to="/cart">Cart</Link> : <p>Cart</p>}
+        {type === "inner" ? (
+          <Link to="/cart" onClick={() => dispatch(open())}>
+            Cart
+          </Link>
+        ) : (
+          <p>Cart</p>
+        )}
       </div>
     </div>
   );

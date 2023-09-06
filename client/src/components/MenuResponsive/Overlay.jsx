@@ -7,7 +7,6 @@ import "./Overlay.css";
 import MenuNavbar from "./MenuNavbar";
 const Overlay = () => {
   const isMenuOpen = useSelector((state) => state.menu.open);
-  const dispatch = useDispatch();
 
   return (
     <div
