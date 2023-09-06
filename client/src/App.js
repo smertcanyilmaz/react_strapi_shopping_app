@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 import { useSelector } from "react-redux";
 import Overlay from "./components/MenuResponsive/Overlay";
+import CartResponsive from "./pages/Responsive/CartResponsive";
 
 const Layout = () => {
   const isMenuOpen = useSelector((state) => state.menu.open);
@@ -44,6 +45,7 @@ function App() {
             <Route path="products/women/:id" element={<Women />} />
             <Route path="products/men/:id" element={<Men />} />
             <Route path="product/:id" element={<Product />} />
+            <Route path="cart" element={<CartResponsive />} />
           </Route>
         </Routes>
       </BrowserRouter>

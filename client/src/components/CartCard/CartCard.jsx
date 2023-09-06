@@ -2,13 +2,19 @@ import { useSelector } from "react-redux";
 import Payment from "./Payment";
 import CartCardMain from "./CartCardMain";
 
-const CartCard = ({ showPayment, type }) => {
+const CartCard = ({ showPayment, type, responsive }) => {
   const cartProducts = useSelector((state) => state.cart.products);
   const favorites = useSelector((state) => state.favorites.favorites);
   const products = type === "cart" ? cartProducts : favorites;
 
   return (
-    <div className="cart absolute top-20 right-5 z-50 bg-white p-5 shadow-lg">
+    <div
+      className={
+        responsive
+          ? "cart p-5"
+          : "cart absolute top-20 right-5 z-50 bg-white p-5 shadow-lg"
+      }
+    >
       <h1 className="mb-7 text-gray-500 font-normal text-2xl">
         {type === "cart" ? "Product in your cart" : "Favorites"}
       </h1>

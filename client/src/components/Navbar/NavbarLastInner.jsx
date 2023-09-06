@@ -1,10 +1,9 @@
-import { useState } from "react";
-import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import Favorites from "../Favorites/Favorites";
+import { Link } from "react-router-dom";
+import CartResponsive from "../../pages/Responsive/CartResponsive";
 
 const NavbarLastInner = ({ handleOpenCart, handleOpenFav, type }) => {
   const cartProducts = useSelector((state) => state.cart.products);
@@ -67,7 +66,7 @@ const NavbarLastInner = ({ handleOpenCart, handleOpenFav, type }) => {
           </span>
           <ShoppingCartOutlinedIcon />
         </div>
-        <p>Cart</p>
+        {type === "inner" ? <Link to="/cart">Cart</Link> : <p>Cart</p>}
       </div>
     </div>
   );
