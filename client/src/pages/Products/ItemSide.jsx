@@ -19,7 +19,7 @@ const ItemSide = ({
   }
 
   return (
-    <div className="right space-y-12 flex-1 mb-16 md:mb-0">
+    <div className="right md:space-y-12 flex-1 mb-16 md:mb-0">
       <div className="hidden md:block w-full">
         <img src={imageUrl} alt="" className="h-64 object-cover" />
       </div>
