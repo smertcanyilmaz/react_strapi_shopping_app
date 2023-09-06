@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ item }) => {
+const Card = ({ item, type }) => {
   const [showImg, setShowImg] = useState(false);
   const url = process.env.REACT_APP_UPLOAD_URL;
   console.log(item);
   return (
-    <Link to={`/product/${item.id}`} className=" flex flex-col gap-2">
+    <Link
+      to={`/product/${item.id}`}
+      className=" flex flex-col gap-4 items-center md:gap-2"
+    >
       <div
-        className=" max-w-3xl flex flex-col gap-3 relative h-[20rem]"
+        className={`max-w-3xl flex flex-col gap-3 relative h-[20rem] md:h-[20rem] ${
+          type === "Featured" || type === "Trending" ? "h-[27rem]" : ""
+        }`}
         onMouseEnter={() => setShowImg(true)}
         onMouseLeave={() => setShowImg(false)}
       >

@@ -17,7 +17,7 @@ const Products = ({ page }) => {
   );
 
   return (
-    <div className="flex mx-5 mt-8 gap-32">
+    <div className="flex flex-col md:flex-row mx-5 mt-8 gap-32">
       <FilterSide
         data={data}
         catId={catId}

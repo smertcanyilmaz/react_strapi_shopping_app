@@ -8,7 +8,7 @@ const Categories = () => {
   ];
 
   return (
-    <div class="h-[60vh] flex justify-between items-center gap-3 mx-3">
+    <div class="h-[60vh] flex flex-col md:flex-row md:justify-between items-center gap-5 md:gap-3 mx-3 mb-72 md:mb-0">
       <div className=" relative">
         <img src={data[0]} alt="" />
         <button className="btn">THE FOOD</button>

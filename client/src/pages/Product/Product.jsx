@@ -62,12 +62,12 @@ const Product = () => {
   };
 
   return (
-    <div className="px-5 py-12 flex gap-12">
+    <div className="px-5 py-12 flex flex-col md:flex-row gap-12 text-lg md:text-base ">
       {loading ? (
         "loading"
       ) : (
         <>
-          <div className="left flex flex-1 gap-5">
+          <div className="left flex flex-1  gap-5">
             <div className="images flex-1 ">
               <img
                 src={imgUrl}
@@ -90,7 +90,7 @@ const Product = () => {
               />
             </div>
           </div>
-          <div className="right flex-1 flex flex-col gap-7">
+          <div className="right flex-1 flex flex-col gap-7 items-center justify-center md:items-start md:justify-start">
             <h1>{data?.attributes?.title}</h1>
             <div className="flex gap-3">
               {data?.attributes?.isSale && (
@@ -128,34 +128,31 @@ const Product = () => {
               </button>
             </div>
             <button
-              className="add w-52 py-3 bg-blue-500 text-white flex justify-center items-center gap-3 cursor-pointer font-medium text-sm"
+              className="add w-full md:w-52 py-3 bg-blue-500 text-white flex justify-center items-center gap-3 cursor-pointer font-medium text-sm hover:brightness-80 duration-300"
               onClick={addItemClickHandler}
             >
               <AddShoppingCartIcon fontSize="small" /> ADD TO CART
             </button>
-            <div className="links flex gap-5">
+            <div className="links flex gap-5 w-full">
               <button
-                className="item flex item-center gap-2 text-blue-500 text-sm cursor-pointer"
+                className="add w-full md:w-52 py-3 text-gray border-gray border-2 flex justify-center items-center gap-3 cursor-pointer font-medium text-sm hover:bg-red-500 duration-300 hover:text-white"
                 onClick={addFavItemClickHandler}
               >
                 <FavoriteBorderIcon fontSize="small" />
                 ADD TO WISH LIST
               </button>
-              <div className="item flex item-center gap-2 text-blue-500 text-sm">
-                <BalanceIcon fontSize="small" /> ADD TO COMPARE
-              </div>
             </div>
-            <div className="info flex flex-col gap-2 text-gray-500 text-xs mt-4">
+            <div className="info flex md:flex-col gap-5 md:gap-2 text-gray-500 text-xs mt-4">
               <span>Vendor: Polo</span>
               <span>Product Type: T-Shirt</span>
               <span>Tag: T-Shirt, Women, Top</span>
             </div>
             <hr className="w-52 border border-solid border-gray-100 " />
-            <div className="info flex flex-col gap-2 text-gray-500 text-xs mt-4">
+            <div className="info flex md:flex-col gap-12 md:gap-2 text-gray-500 text-xs mt-4">
               <span>DESCRIPTİON</span>
-              <hr className="w-52 border border-solid border-gray-100" />
+              <hr className="hidden md:block w-52 border border-solid border-gray-100" />
               <span>ADDITIONAL INFORMATION</span>
-              <hr className="w-52 border border-solid border-gray-100" />
+              <hr className="hidden md:block  w-52 border border-solid border-gray-100" />
               <span>FAQ</span>
             </div>
           </div>

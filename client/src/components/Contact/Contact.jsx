@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
+
+import { IconButton } from "@mui/material";
+
 const Contact = () => {
   return (
-    <div className=" space-y-10 w-full">
-      <h2>Contact with us</h2>
+    <div className=" w-full text-center md:p-0 space-y-5  md:space-y-10  ">
+      <h2 className="text-lg md:text-base">Contact with me</h2>
 
-      <div className="flex border border-blue-600">
+      <div className="hidden md:flex border border-blue-600">
         <input
           type="text"
           name=""
@@ -20,15 +23,22 @@ const Contact = () => {
           JOİN US
         </button>
       </div>
-      <div className="icons space-x-3 ">
+      <div className="icons flex gap-6 w-full items-center justify-center md:block md:space-x-6 ">
         <Link to="https://github.com/smertcanyilmaz">
-          <GitHubIcon />
+          <IconButton>
+            <GitHubIcon fontSize="medium" />
+          </IconButton>
         </Link>
         <Link to="https://www.linkedin.com/in/s%C3%BCleyman-mertcan-y%C4%B1lmaz-87312b196/">
-          <LinkedInIcon className="text-[#0077b5] " />
+          <IconButton>
+            <LinkedInIcon className="text-[#0077b5]" fontSize="medium" />
+          </IconButton>
         </Link>
+
         <Link to="https://twitter.com/smertcann">
-          <TwitterIcon className=" text-[#1DA1F2]" />
+          <IconButton>
+            <TwitterIcon className=" text-[#1DA1F2]" fontSize="medium" />
+          </IconButton>
         </Link>
       </div>
     </div>

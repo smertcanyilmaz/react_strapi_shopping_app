@@ -11,7 +11,7 @@ const CartCard = ({ showPayment, type, responsive }) => {
     <div
       className={
         responsive
-          ? "cart p-5"
+          ? "cart p-5 min-h-screen"
           : "cart absolute top-20 right-5 z-50 bg-white p-5 shadow-lg"
       }
     >

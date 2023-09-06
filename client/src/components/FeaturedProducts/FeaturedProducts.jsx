@@ -8,16 +8,16 @@ const FeaturedProducts = ({ type }) => {
   );
 
   return (
-    <div className="max-w-full space-y-10 mx-20 text-sm my-24">
+    <div className="max-w-full space-y-10 mx-20 text-sm my-24 text-center md:text-start">
       <div>
         <h1 className="text-3xl font-bold">{type} Products</h1>
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-col gap-8 md:flex-row md:justify-between">
         {error
           ? "Something went wrong!"
           : loading
           ? "loading"
-          : data?.map((item) => <Card item={item} key={item.id} />)}
+          : data?.map((item) => <Card item={item} key={item.id} type={type} />)}
       </div>
     </div>
   );

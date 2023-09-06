@@ -20,7 +20,7 @@ const FilterSide = ({
   };
 
   return (
-    <div className="left h-full space-y-3 sticky top-8">
+    <div className="left hidden md:block h-full space-y-3 sticky top-8">
       <div className="filterItem space-y-2">
         <h2 className="text-xl">Product Categories</h2>
         {data?.map((item) => (
