@@ -45,6 +45,7 @@ const FilterSide = ({
           setSort={setSort}
           setMaxPrice={setMaxPrice}
           setMinPrice={setMinPrice}
+          filterPrice={true}
         />
         <div className="filterItem space-y-2">
           <h2 className="text-xl">Sort by</h2>
@@ -71,7 +72,7 @@ const FilterSide = ({
         </div>
       </div>
 
-      <ResponsiveFilterSide />
+      <ResponsiveFilterSide filterPrice={true} />
     </>
   );
 };

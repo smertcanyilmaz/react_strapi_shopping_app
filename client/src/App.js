@@ -11,22 +11,24 @@ import { useSelector } from "react-redux";
 import Overlay from "./components/MenuResponsive/Overlay";
 import CartResponsive from "./pages/Responsive/CartResponsive";
 import FavoritesResponsive from "./pages/Responsive/FavoritesResponsive";
+import FilterOverlay from "./components/FilterResponsive/FilterOverlay";
 
 const Layout = () => {
   const isMenuOpen = useSelector((state) => state.menu.open);
+  const isOpenFilter = useSelector((state) => state.openFilter.openFilter);
 
   useEffect(() => {
-    if (isMenuOpen) {
+    if (isMenuOpen || isOpenFilter) {
       document.body.classList.add("scroll-locked");
     } else {
       document.body.classList.remove("scroll-locked");
     }
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isOpenFilter]);
 
   return (
     <>
-      {/* {isMenuOpen && <Overlay />} */}
       <Overlay />
+      <FilterOverlay />
       <div className="app">
         <Navbar />
         <Outlet />

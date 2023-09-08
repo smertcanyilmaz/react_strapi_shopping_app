@@ -1,7 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-import CloseIcon from "@mui/icons-material/Close";
-import { open } from "../../redux/menuReducer";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import NavbarLastInner from "../Navbar/NavbarLastInner";
 import "./Overlay.css";
 import MenuNavbar from "./MenuNavbar";
