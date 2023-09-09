@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import "./Products.css";
-import FilterSide from "./FilterSide";
-import ItemSide from "./ItemSide";
+import FilterSide from "../../components/ProductsParts/FilterSide";
+import ItemSide from "../../components/ProductsParts/ItemSide";
 
 const Products = ({ page }) => {
   const catId = parseInt(useParams().id);
