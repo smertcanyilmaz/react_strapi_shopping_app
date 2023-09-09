@@ -1,6 +1,5 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BalanceIcon from "@mui/icons-material/Balance";
 import useFetch from "../../hooks/useFetch";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -12,7 +11,7 @@ const Product = () => {
   const id = useParams().id;
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
-  const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+  const { data, loading } = useFetch(`/products/${id}?populate=*`);
 
   const imgUrl =
     process.env.REACT_APP_UPLOAD_URL +

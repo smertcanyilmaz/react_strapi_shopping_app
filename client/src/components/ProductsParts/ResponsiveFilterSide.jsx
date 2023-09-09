@@ -2,11 +2,10 @@ import React from "react";
 import "./ResponsiveFilterSide.css";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { openFilter } from "../../redux/filterResponsiveReducer";
 
 const ResponsiveFilterSide = () => {
-  const isOpenFilter = useSelector((state) => state.openFilter.openFilter);
   const dispatch = useDispatch();
 
   const openFilterHandler = () => {

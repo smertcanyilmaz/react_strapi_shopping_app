@@ -20,11 +20,8 @@ const Products = ({ page }) => {
     <div className="flex flex-col md:flex-row mx-5  mt-8 gap-12 md:gap-32">
       <FilterSide
         data={data}
-        catId={catId}
-        maxPrice={maxPrice}
         setMaxPrice={setMaxPrice}
         setMinPrice={setMinPrice}
-        sort={sort}
         setSort={setSort}
         selectedSubCats={selectedSubCats}
         setSelectedSubCats={setSelectedSubCats}
