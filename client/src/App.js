@@ -1,43 +1,13 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
 import Layout from "./pages/Layout/Layout";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import "./App.css";
-import { useSelector } from "react-redux";
-import Overlay from "./components/MenuResponsive/Overlay";
 import CartResponsive from "./pages/Responsive/CartResponsive";
 import FavoritesResponsive from "./pages/Responsive/FavoritesResponsive";
-import FilterOverlay from "./components/FilterResponsive/FilterOverlay";
-
-// const Layout = () => {
-//   const isMenuOpen = useSelector((state) => state.menu.open);
-//   const isOpenFilter = useSelector((state) => state.openFilter.openFilter);
-
-//   useEffect(() => {
-//     if (isMenuOpen || isOpenFilter) {
-//       document.body.classList.add("scroll-locked");
-//     } else {
-//       document.body.classList.remove("scroll-locked");
-//     }
-//   }, [isMenuOpen, isOpenFilter]);
-
-//   return (
-//     <>
-//       <Overlay />
-//       <FilterOverlay />
-//       <div className="app">
-//         <Navbar />
-//         <Outlet />
-//         <Footer />
-//       </div>
-//     </>
-//   );
-// };
+import "./App.css";
 
 function App() {
   return (
