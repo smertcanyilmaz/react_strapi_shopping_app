@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
+import Layout from "./pages/Layout/Layout";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
@@ -13,30 +14,30 @@ import CartResponsive from "./pages/Responsive/CartResponsive";
 import FavoritesResponsive from "./pages/Responsive/FavoritesResponsive";
 import FilterOverlay from "./components/FilterResponsive/FilterOverlay";
 
-const Layout = () => {
-  const isMenuOpen = useSelector((state) => state.menu.open);
-  const isOpenFilter = useSelector((state) => state.openFilter.openFilter);
+// const Layout = () => {
+//   const isMenuOpen = useSelector((state) => state.menu.open);
+//   const isOpenFilter = useSelector((state) => state.openFilter.openFilter);
 
-  useEffect(() => {
-    if (isMenuOpen || isOpenFilter) {
-      document.body.classList.add("scroll-locked");
-    } else {
-      document.body.classList.remove("scroll-locked");
-    }
-  }, [isMenuOpen, isOpenFilter]);
+//   useEffect(() => {
+//     if (isMenuOpen || isOpenFilter) {
+//       document.body.classList.add("scroll-locked");
+//     } else {
+//       document.body.classList.remove("scroll-locked");
+//     }
+//   }, [isMenuOpen, isOpenFilter]);
 
-  return (
-    <>
-      <Overlay />
-      <FilterOverlay />
-      <div className="app">
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </div>
-    </>
-  );
-};
+//   return (
+//     <>
+//       <Overlay />
+//       <FilterOverlay />
+//       <div className="app">
+//         <Navbar />
+//         <Outlet />
+//         <Footer />
+//       </div>
+//     </>
+//   );
+// };
 
 function App() {
   return (
