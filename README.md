@@ -7,6 +7,7 @@ starting guide:
 after cloning the project, you should type the following commands in the terminal:
 
 react_shop\api> npm run develop (this command start strapi server)
+
 react_shop\client> npm run start
 
 
